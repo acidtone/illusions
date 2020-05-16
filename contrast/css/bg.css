@@ -1,0 +1,12 @@
+main {
+  background-image: linear-gradient(to right, white 50%, black 50%);
+  background-image: linear-gradient(to right, white, black);
+}
+
+/* Yuck. TODO: possible to var(--direction) above? */
+@media screen and (orientation: portrait) {
+  main {
+    background-image: linear-gradient(white 50%, black 50%);
+    background-image: linear-gradient(white, black);
+  }
+}
