@@ -1,0 +1,12 @@
+
+main {
+  background: grey;
+}
+
+.circle-one {
+  border: 20vmin solid lightyellow;
+}
+
+.circle-two {
+  border: 20vmin solid black;
+}

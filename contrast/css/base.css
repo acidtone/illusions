@@ -8,8 +8,8 @@ main {
 }
 
 article {
-  width: 35vmin;
-  height: 35vmin;
+  width: 25vmin;
+  height: 25vmin;
   margin: auto;
 
   background-color: grey;

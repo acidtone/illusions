@@ -1,0 +1,17 @@
+
+article {
+  animation: pulse 2s infinite linear;
+}
+
+@keyframes pulse {
+  from {
+    background-color: white;
+  }
+  50% {
+    background-color: black;
+
+  }
+  to {
+    background-color: white;
+  }
+}
