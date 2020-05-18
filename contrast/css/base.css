@@ -1,27 +1,36 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
 }
 
 main {
   display: flex;
+  /* TODO: correct for address bar height on mobile */
   height: 100vh;
+
+  --direction: to right,;
 }
 
 article {
+
+  /* TODO: reactor for em units -> reusable out of the global scope */
   width: 25vmin;
   height: 25vmin;
+
+  /* 'cuz CSS*/ 
   margin: auto;
 
+  /* How to make a grey circle out of a transparent box */
   background-color: grey;
   border-radius: 50%;
-}
-
-.tissue {
-  display: none;
 }
 
 @media screen and (orientation: portrait) {
   main {
     flex-direction: column;
+    --direction: ;
   }
 }
