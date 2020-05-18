@@ -4,32 +4,43 @@
 
 body {
   margin: 0;
+
+  display: grid;
+  grid-template-columns: 30ch 1fr;
+  grid-template-rows: 1fr;
+  
+  /* TODO: correct for address bar height on mobile */
+  height: 100vh;
 }
 
 main {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+section {
   display: flex;
-  /* TODO: correct for address bar height on mobile */
-  height: 100vh;
+  
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
 
   --direction: to right,;
 }
 
 article {
-
-  /* TODO: reactor for em units -> reusable out of the global scope */
-  width: 25vmin;
-  height: 25vmin;
-
-  /* 'cuz CSS*/ 
+    /* Center... 'cuz CSS */ 
   margin: auto;
-
-  /* How to make a grey circle out of a transparent box */
+  
+  /* Make a grey circle out of a transparent box */
+  width: 10rem;
+  height: 10rem;
   background-color: grey;
   border-radius: 50%;
 }
 
 @media screen and (orientation: portrait) {
-  main {
+  section {
     flex-direction: column;
     --direction: ;
   }

@@ -2,27 +2,73 @@
 <html lang="en">
 <head>
   <title>Simultaneous Contrast Illusion</title>
+  <!-- Core Utilities-->
+  <link rel="stylesheet" href="https://acidtone.github.io/core/v0/css/colour.css">
+
+  <!-- TODO: figure out why GH Pages won't serve the below file. @import? -->
+  <!-- <link rel="stylesheet" href="https://acidtone.github.io/core/v0/css/fonts.css"> -->
+
+  <!-- Hack to fix the problem above. -->
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="../css/fonts.css">
+
+
+  <!-- Project Styles -->
+  <link rel="stylesheet" href="../css/_vars.css">
   <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/controls.css">
+  <link rel="stylesheet" href="../css/patches.css">
   <link rel="stylesheet" href="../css/bg-gradient.css">
   <link rel="stylesheet" href="../css/tissue.css">
 </head>
-<body>
-  <header style="display: none">
+<body data-clr-harmony="comp">
+  <header>
     <h1>Simultaneous Contrast Illusion</h1>
     <p>Take two identical grey patches.</p>
-    <label for="bg">
+    <div class="checkbox">
       <input type="checkbox" id="bg">
-      <p>Add a light/dark background. The patch on the light background appears darker than the one on a dark background.</p>
-    </label>
-    <label for="img">
+      <label for="bg">Add a light/dark background. The patch on the light background appears darker than the one on a dark background.</label>
+      </label>
+    </div>
+    <div class="checkbox">
       <input type="checkbox" id="img">
-      <p>Overlay a semi-transparent image to magnify the effect.</p>
-    </label>
+      <label for="img">Overlay a semi-transparent image to magnify the effect.</label>
+    </div>
   </header>
   <main>
-    <article class="circle-one"></article>
-    <article class="circle-two"></article>
-    <div class="tissue"></div>
+    <section class="bg-gradient hidden">
+      <article class="circle-one"></article>
+      <article class="circle-two"></article>
+    </section>
+    <div class="tissue hidden"></div>
   </main>
+  <script>
+    /* Setup global variables */
+    const root = document.querySelector(':root');
+    
+    /* TODO: move to checkbox module-controller-thing */
+    /* Initialize controls */
+    const bg = document.getElementById('bg');
+    const img = document.getElementById('img');
+
+    /* Initialize :checked checkboxes
+        ex. page reloaded but form state saved. Gotta scrub classList
+    */
+    if (bg.checked) {
+      root.querySelector('.bg-gradient').classList.remove('hidden');
+    }
+    if (img.checked) {
+      root.querySelector('.tissue').classList.remove('hidden');
+    }
+
+    /* Toggle things */
+    bg.addEventListener('change', (event) => {
+      root.querySelector('.bg-gradient').classList.toggle('hidden');
+    })
+    img.addEventListener('change', (event) => {
+      root.querySelector('.tissue').classList.toggle('hidden');
+    })
+
+  </script>
 </body>
 </html>

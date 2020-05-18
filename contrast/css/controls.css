@@ -1,0 +1,28 @@
+header {
+  --sat: 0%;
+
+  --clr-light: hsl(var(--hue), var(--sat), 95%);
+  --clr-med: hsl(var(--hue), var(--sat), 70%);
+  --clr-dark: hsl(var(--hue), var(--sat), var(--lum-very-dark));
+
+  padding: 1rem;
+
+  background-color: var(--clr-light, white);
+  
+  color: var(--clr-dark);
+  border-right: 1px solid var(--clr-med,lightgray);
+}
+
+body {
+  color: var(--clr-text);
+}
+
+.checkbox {
+  display: flex;
+  align-items: baseline;
+}
+
+input:checked ~ label {
+  background-color: var(--clr-checked);
+}
+
