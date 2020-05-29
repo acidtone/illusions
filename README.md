@@ -1,4 +1,3 @@
 # Optical Illusions with CSS
-## Attribution
-"Illusions" with Arthur Shapiro
-Available on Curiosity Stream
+## Attributions
+_"Illusions"_ - Available on [Curiosity Stream](https://curiositystream.com/)
