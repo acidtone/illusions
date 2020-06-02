@@ -51,7 +51,7 @@
     const img = document.getElementById('img');
 
     /* Initialize :checked checkboxes
-        ex. page reloaded but form state saved. Gotta scrub classList
+        ex. page reloaded but form state saved, so reset 'hidden' in classList on page load.
     */
     if (bg.checked) {
       root.querySelector('.bg-gradient').classList.remove('hidden');
@@ -61,6 +61,7 @@
     }
 
     /* Toggle things */
+    /* The above reset avoids having controls toggle out of sync. */
     bg.addEventListener('change', (event) => {
       root.querySelector('.bg-gradient').classList.toggle('hidden');
     })
