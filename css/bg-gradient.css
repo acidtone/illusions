@@ -1,10 +1,11 @@
-section {
+section.bg-active {
+  /* TODO: Connect to control */
   --grad-start: 50%;
   --grad-end: 50%;
 
   background-image: linear-gradient(var(--direction) white var(--grad-start, 0%), black var(--grad-end, 100%));
 }
 
-section.hidden {
+section {
   background-image: none;
 }
