@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   margin: 0;
 
@@ -10,7 +14,7 @@ body {
   grid-template-rows: 1fr;
   
   /* TODO: correct for address bar height on mobile */
-  height: 100vh;
+  height: 100%;
 }
 
 .overlay {
