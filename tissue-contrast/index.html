@@ -30,14 +30,14 @@
       </label>
     </div>
     <div class="checkbox">
-      <input type="checkbox" id="img">
-      <label for="img">Overlay a semi-transparent image to magnify the effect.</label>
+      <input type="checkbox" id="tissue">
+      <label for="tissue">Overlay a semi-transparent image to magnify the effect.</label>
     </div>
   </header>
-  <main>
-    <section class="bg-gradient hidden">
-      <article class="circle-one"></article>
-      <article class="circle-two"></article>
+  <main class="overlay">
+    <section class="split-bg">
+      <article class="patch"></article>
+      <article class="patch"></article>
     </section>
     <div class="tissue hidden"></div>
   </main>
@@ -48,13 +48,13 @@
     /* TODO: move to checkbox module-controller-thing */
     /* Initialize controls */
     const bg = document.getElementById('bg');
-    const img = document.getElementById('img');
+    const img = document.getElementById('tissue');
 
     /* Initialize :checked checkboxes
-        ex. page reloaded but form state saved, so reset 'hidden' in classList on page load.
+        ex. page reloaded but form state saved, so reset classList on page load.
     */
     if (bg.checked) {
-      root.querySelector('.bg-gradient').classList.remove('hidden');
+      root.querySelector('.split-bg').classList.add('bg-active');
     }
     if (img.checked) {
       root.querySelector('.tissue').classList.remove('hidden');
@@ -63,7 +63,7 @@
     /* Toggle things */
     /* The above reset avoids having controls toggle out of sync. */
     bg.addEventListener('change', (event) => {
-      root.querySelector('.bg-gradient').classList.toggle('hidden');
+      root.querySelector('.split-bg').classList.toggle('bg-active');
     })
     img.addEventListener('change', (event) => {
       root.querySelector('.tissue').classList.toggle('hidden');
