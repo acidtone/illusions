@@ -17,6 +17,17 @@ body {
   height: 100%;
 }
 
+@media (orientation: portrait) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+  }
+
+  main {
+    grid-row: 1;
+  }
+}
+
 .overlay {
   display: grid;
   grid-template-columns: 1fr;
@@ -39,8 +50,8 @@ article {
   margin: auto;
   
   /* Make a grey circle out of a transparent box */
-  width: 10rem;
-  height: 10rem;
+  width: 30vmin;
+  height: 30vmin;
   background-color: grey;
   border-radius: 50%;
 }
